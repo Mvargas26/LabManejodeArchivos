@@ -23,4 +23,17 @@
     Private Sub mnSalir_Click(sender As Object, e As EventArgs) Handles mnSalir.Click
         Me.Close()
     End Sub
+
+    Private Sub CargarXMLToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CargarXMLToolStripMenuItem.Click
+        Try
+            'muetra la pantalla carga clientes al ususario
+            Dim frmPantalla As New frmCargarXML
+            With frmPantalla
+                .MdiParent = Me
+                .Show()
+            End With
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, Me.Text)
+        End Try
+    End Sub
 End Class

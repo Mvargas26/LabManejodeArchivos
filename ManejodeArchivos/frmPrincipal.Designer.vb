@@ -26,13 +26,14 @@ Partial Class frmPrincipal
         Me.mnCargarClientes = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnCambiarColor = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnSalir = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CargarXMLToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnPrincipal.SuspendLayout()
         Me.SuspendLayout()
         '
         'mnPrincipal
         '
         Me.mnPrincipal.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.mnPrincipal.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnCargarClientes, Me.mnCambiarColor, Me.mnSalir})
+        Me.mnPrincipal.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnCargarClientes, Me.CargarXMLToolStripMenuItem, Me.mnCambiarColor, Me.mnSalir})
         Me.mnPrincipal.Location = New System.Drawing.Point(0, 0)
         Me.mnPrincipal.Name = "mnPrincipal"
         Me.mnPrincipal.Size = New System.Drawing.Size(1002, 28)
@@ -57,6 +58,12 @@ Partial Class frmPrincipal
         Me.mnSalir.Size = New System.Drawing.Size(52, 24)
         Me.mnSalir.Text = "Salir"
         '
+        'CargarXMLToolStripMenuItem
+        '
+        Me.CargarXMLToolStripMenuItem.Name = "CargarXMLToolStripMenuItem"
+        Me.CargarXMLToolStripMenuItem.Size = New System.Drawing.Size(100, 24)
+        Me.CargarXMLToolStripMenuItem.Text = "Cargar XML"
+        '
         'frmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -78,4 +85,5 @@ Partial Class frmPrincipal
     Friend WithEvents mnCargarClientes As ToolStripMenuItem
     Friend WithEvents mnCambiarColor As ToolStripMenuItem
     Friend WithEvents mnSalir As ToolStripMenuItem
+    Friend WithEvents CargarXMLToolStripMenuItem As ToolStripMenuItem
 End Class
