@@ -61,24 +61,30 @@ Public Class frmCargaClientes
 
     Private Sub btnGuardarXML_Click(sender As Object, e As EventArgs) Handles btnGuardarXML.Click
         Try
-            Dim strRutaArchivo As String = Me.txtRuta.Text
-            strRutaArchivo = strRutaArchivo.Replace(".txt", ".xml")
+            If Me.lisvDatosCargados.Items.Count > 0 Then 'valida q los item del lsit view sean mayor a 0
 
-            Dim listaClientes As New List(Of Negocios.Cliente)
+                Dim strRutaArchivo As String = Me.txtRuta.Text
+                strRutaArchivo = strRutaArchivo.Replace(".txt", ".xml")
 
-            For Each item As ListViewItem In Me.lisvDatosCargados.Items
-                listaClientes.Add(New Negocios.Cliente With {
-                .Identificacion = item.Text,
-                .Nombre = item.SubItems(1).Text,
-                .Apellido = item.SubItems(2).Text,
-                .Provincia = item.SubItems(3).Text,
-                .CorreoElectronico = item.SubItems(4).Text,
-                .MontoComprado = CDec(item.SubItems(5).Text)})
-            Next
+                Dim listaClientes As New List(Of Negocios.Cliente)
 
-            Dim iGuardarClientes As New Negocios.Cliente 'llamada al metodo en la capa de negocios
-            iGuardarClientes.AlmacenarInfoClientes(strRutaArchivo, listaClientes)
-            MessageBox.Show("Almacenado el cliente correctamente", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                For Each item As ListViewItem In Me.lisvDatosCargados.Items
+                    listaClientes.Add(New Negocios.Cliente With {
+                    .Identificacion = item.Text,
+                    .Nombre = item.SubItems(1).Text,
+                    .Apellido = item.SubItems(2).Text,
+                    .Provincia = item.SubItems(3).Text,
+                    .CorreoElectronico = item.SubItems(4).Text,
+                    .MontoComprado = CDec(item.SubItems(5).Text)})
+                Next
+
+                Dim iGuardarClientes As New Negocios.Cliente 'llamada al metodo en la capa de negocios
+                iGuardarClientes.AlmacenarInfoClientes(strRutaArchivo, listaClientes)
+                MessageBox.Show("Almacenado el cliente correctamente", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Else
+                MessageBox.Show("No hay información en la tabla", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            End If
+
 
         Catch ex As Exception
             MessageBox.Show(ex.Message, Me.Text)
