@@ -28,7 +28,12 @@ Partial Class frmCargarXML
         Me.txtRutaXML = New System.Windows.Forms.TextBox()
         Me.lblRutaXML = New System.Windows.Forms.Label()
         Me.ofdArchivoXML = New System.Windows.Forms.OpenFileDialog()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.btnBuscarCliente = New System.Windows.Forms.Button()
+        Me.txtCedulaCliente = New System.Windows.Forms.TextBox()
+        Me.lblCedulaCliente = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -84,17 +89,59 @@ Partial Class frmCargarXML
         '
         Me.ofdArchivoXML.FileName = "OpenFileDialog1"
         '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.btnBuscarCliente)
+        Me.GroupBox2.Controls.Add(Me.txtCedulaCliente)
+        Me.GroupBox2.Controls.Add(Me.lblCedulaCliente)
+        Me.GroupBox2.Location = New System.Drawing.Point(35, 124)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(338, 143)
+        Me.GroupBox2.TabIndex = 1
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Consultar Información de Cliente"
+        '
+        'btnBuscarCliente
+        '
+        Me.btnBuscarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnBuscarCliente.Location = New System.Drawing.Point(108, 94)
+        Me.btnBuscarCliente.Name = "btnBuscarCliente"
+        Me.btnBuscarCliente.Size = New System.Drawing.Size(138, 43)
+        Me.btnBuscarCliente.TabIndex = 8
+        Me.btnBuscarCliente.Text = "Buscar"
+        Me.btnBuscarCliente.UseVisualStyleBackColor = True
+        '
+        'txtCedulaCliente
+        '
+        Me.txtCedulaCliente.Location = New System.Drawing.Point(108, 50)
+        Me.txtCedulaCliente.Name = "txtCedulaCliente"
+        Me.txtCedulaCliente.ReadOnly = True
+        Me.txtCedulaCliente.Size = New System.Drawing.Size(170, 22)
+        Me.txtCedulaCliente.TabIndex = 6
+        '
+        'lblCedulaCliente
+        '
+        Me.lblCedulaCliente.AccessibleRole = System.Windows.Forms.AccessibleRole.Equation
+        Me.lblCedulaCliente.Location = New System.Drawing.Point(6, 49)
+        Me.lblCedulaCliente.Name = "lblCedulaCliente"
+        Me.lblCedulaCliente.Size = New System.Drawing.Size(80, 23)
+        Me.lblCedulaCliente.TabIndex = 5
+        Me.lblCedulaCliente.Text = "ID Cliente:"
+        '
         'frmCargarXML
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "frmCargarXML"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Cargar XML"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -105,4 +152,8 @@ Partial Class frmCargarXML
     Friend WithEvents txtRutaXML As TextBox
     Friend WithEvents lblRutaXML As Label
     Friend WithEvents ofdArchivoXML As OpenFileDialog
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents btnBuscarCliente As Button
+    Friend WithEvents txtCedulaCliente As TextBox
+    Friend WithEvents lblCedulaCliente As Label
 End Class

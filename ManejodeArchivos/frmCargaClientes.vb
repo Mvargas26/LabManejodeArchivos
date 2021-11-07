@@ -84,4 +84,8 @@ Public Class frmCargaClientes
             MessageBox.Show(ex.Message, Me.Text)
         End Try
     End Sub
+
+    Private Sub grpCargarArchivo_Enter(sender As Object, e As EventArgs) Handles grpCargarArchivo.Enter
+
+    End Sub
 End Class

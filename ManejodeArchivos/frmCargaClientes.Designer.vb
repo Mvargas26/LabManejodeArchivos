@@ -23,6 +23,7 @@ Partial Class frmCargaClientes
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.grpCargarArchivo = New System.Windows.Forms.GroupBox()
+        Me.btnGuardarXML = New System.Windows.Forms.Button()
         Me.btnCargarArchivo = New System.Windows.Forms.Button()
         Me.btnRuta = New System.Windows.Forms.Button()
         Me.txtRuta = New System.Windows.Forms.TextBox()
@@ -35,7 +36,6 @@ Partial Class frmCargaClientes
         Me.colCorreo = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colMonto = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ofdArchivo = New System.Windows.Forms.OpenFileDialog()
-        Me.btnGuardarXML = New System.Windows.Forms.Button()
         Me.grpCargarArchivo.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -52,6 +52,16 @@ Partial Class frmCargaClientes
         Me.grpCargarArchivo.Size = New System.Drawing.Size(756, 136)
         Me.grpCargarArchivo.TabIndex = 0
         Me.grpCargarArchivo.TabStop = False
+        '
+        'btnGuardarXML
+        '
+        Me.btnGuardarXML.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnGuardarXML.Location = New System.Drawing.Point(606, 59)
+        Me.btnGuardarXML.Name = "btnGuardarXML"
+        Me.btnGuardarXML.Size = New System.Drawing.Size(138, 43)
+        Me.btnGuardarXML.TabIndex = 4
+        Me.btnGuardarXML.Text = "Guardar XML"
+        Me.btnGuardarXML.UseVisualStyleBackColor = True
         '
         'btnCargarArchivo
         '
@@ -136,16 +146,6 @@ Partial Class frmCargaClientes
         'ofdArchivo
         '
         Me.ofdArchivo.FileName = "OpenFileDialog1"
-        '
-        'btnGuardarXML
-        '
-        Me.btnGuardarXML.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnGuardarXML.Location = New System.Drawing.Point(606, 59)
-        Me.btnGuardarXML.Name = "btnGuardarXML"
-        Me.btnGuardarXML.Size = New System.Drawing.Size(138, 43)
-        Me.btnGuardarXML.TabIndex = 4
-        Me.btnGuardarXML.Text = "Guardar XML"
-        Me.btnGuardarXML.UseVisualStyleBackColor = True
         '
         'frmCargaClientes
         '

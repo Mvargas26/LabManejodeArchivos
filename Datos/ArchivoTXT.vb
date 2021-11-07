@@ -7,6 +7,9 @@ Public Class ArchivoTXT
     ''' <returns></returns>
 
     Public Function Leer(ByVal RutaArchivo As String) As ArrayList 'el arraylist es una coleccion vectorial autoadministrada
+        'Dim iconexion As New ConexionSQL
+        'iconexion.ProbarConexion()
+
         Dim listDatos As New ArrayList
         Dim srContenido As New StreamReader(RutaArchivo) 'obj de tipo stremreader que nos va permitir leer linea a linea
 

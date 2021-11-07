@@ -8,6 +8,9 @@ Public Class Cliente
     Private strProvincia As String = String.Empty
     Private strEmail As String = String.Empty
     Private dmlMontoComprado As Decimal = 0
+
+    Dim xmlIdentificacion, xmlNombre, xmlApellido, xmlProvincia, xmlEmail, xmlMontoComprado As String
+    Dim arrInfoLeida As New ArrayList
 #End Region
 
 
@@ -93,6 +96,7 @@ Public Class Cliente
 
             'aqui hacemos una validacion, de que en este caso especifico, tengalos 6 datos(osea las 6 columnas que queremos en el list view)
             'en caso de que no, no las va agregar al arraylist Datos
+
             If arrValores.Length = 6 Then
                 Try
                     ' aqui hara la siguiente comrpbacion:
@@ -126,11 +130,28 @@ Public Class Cliente
                         Throw New Exception
                     End If
 
-                    arrInfoCompras.Add(arrValores)
                 Catch ex As Exception
                     'aca si aplica dejarlo vacio para que no haga nada
                 End Try
+            End If '/////// Fin validaciones
 
+            'aqui vamos a comparar si los nombres se repiten que sume lo que tiene el arrylist
+            'en su columna 5 q es igual a monto
+            Dim blnClienteExiste As Boolean = False
+            Dim indiceClienteActualizar As Integer = -1
+
+            For Each arrClientesFinal() As String In arrInfoCompras
+                indiceClienteActualizar += 1
+                If arrValores(0) = arrClientesFinal(0) Then 'Si el cliente a procesar en la columna 0 es igual al cliente procesado en la colmna 0
+                    blnClienteExiste = True
+                    Exit For
+                End If
+            Next
+
+            If blnClienteExiste Then
+                arrInfoCompras(indiceClienteActualizar)(5) = CDec(arrInfoCompras(indiceClienteActualizar)(5)) + CDec(arrValores(5))
+            Else
+                arrInfoCompras.Add(arrValores)
             End If
         Next
 
@@ -196,7 +217,9 @@ Public Class Cliente
     End Sub
 
 
+
 #End Region
+
 
 
 End Class
